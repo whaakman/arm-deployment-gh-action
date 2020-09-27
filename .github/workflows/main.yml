@@ -21,6 +21,6 @@ jobs:
         uses: azure/arm-deploy@v1
         with:
           subscriptionId: ${{ secrets.SUBSCRIPTION_ID }}
-          resourceGroupName: $RESOURCE_GROUP
+          resourceGroupName: gh-actions-arm-deployment
           template: ./azuredeploy.json
           parameters: sqlAdministratorLogin=${{ secrets.SQLADMINISTRATORLOGIN }}, sqlAdministratorLoginPassword=${{ secrets.SQLADMINISTRATORLOGINPASSWORD }}
