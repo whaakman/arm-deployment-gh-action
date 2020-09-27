@@ -5,13 +5,13 @@
     "sqlAdministratorLogin": {
       "type": "string",
       "metadata": {
-        "description": "The administrator username of the SQL Server."
+        "description": "The administrator username of the SQL Server. Parsed from GH Secret"
       }
     },
     "sqlAdministratorLoginPassword": {
       "type": "securestring",
       "metadata": {
-        "description": "The administrator password of the SQL Server."
+        "description": "The administrator password of the SQL Server. Parsed from GH Secret"
       }
     },
     "transparentDataEncryption": {
