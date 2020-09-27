@@ -23,4 +23,4 @@ jobs:
           subscriptionId: ${{ secrets.SUBSCRIPTION_ID }}
           resourceGroupName: $RESOURCE_GROUP
           template: ./azuredeploy.json
-          parameters: sqlAdministratorLogin=${{ secrets.SQLADMINISTRATORLOGIN }}
+          parameters: sqlAdministratorLogin="abc"
