@@ -23,4 +23,6 @@ jobs:
           subscriptionId: ${{ secrets.SUBSCRIPTION_ID }}
           resourceGroupName: gh-actions-arm-deployment
           template: ./azuredeploy.json
-          parameters: sqlAdministratorLogin=${{ secrets.SQLADMINISTRATORLOGIN }}, sqlAdministratorLoginPassword=${{ secrets.SQLADMINISTRATORLOGINPASSWORD }}
+          parameters: 
+            sqlAdministratorLogin=${{ secrets.SQLADMINISTRATORLOGIN }}
+            sqlAdministratorLoginPassword=${{ secrets.SQLADMINISTRATORLOGINPASSWORD }}
