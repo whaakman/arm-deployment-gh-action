@@ -1,0 +1,30 @@
+on: 
+    push:
+      branches:
+        - master
+  name: Deploy ARM Template
+  
+  env:
+    RESOURCE_GROUP: gh-actions-arm-deployment
+  
+  jobs:
+    deploy-arm-template:
+      runs-on: ubuntu-latest
+      name: Deploy ARM Template
+      steps:
+      
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+  
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Depoy ARM Template
+        uses: azure/arm-deploy@v1
+         with:
+          subscriptionId: ${{ secrets.SUBSCRIPTION_ID }}
+          resourceGroupName: $RESOURCE_GROUP
+          template: ./azuredeploy.json
+          parameters: sqlAdministratorLogin=${{ secrets.SQLADMINISTRATORLOGIN }}, sqlAdministratorLoginPassword=${{ secrets.SQLADMINISTRATORLOGINPASSWORD }}
