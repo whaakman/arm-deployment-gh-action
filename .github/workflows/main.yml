@@ -1,9 +1,6 @@
 name: Deploy ARM Template
 on: [push]
 
-env:
-  RESOURCE_GROUP: gh-actions-arm-deployment
-
 jobs:
   deploy-arm-template:
     runs-on: ubuntu-latest
